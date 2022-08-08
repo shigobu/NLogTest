@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NLogTest"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="NLogテスト" Width="300" SizeToContent="Height">
     <Grid>
-        
+        <StackPanel>
+            <Button Content="Trace" Click="Button_Click"/>
+            <Button Content="Debug" Click="Button_Click"/>
+            <Button Content="Info" Click="Button_Click"/>
+            <Button Content="Warn" Click="Button_Click"/>
+            <Button Content="Error" Click="Button_Click"/>
+            <Button Content="Fatal" Click="Button_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

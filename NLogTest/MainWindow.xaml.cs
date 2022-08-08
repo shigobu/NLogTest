@@ -20,9 +20,51 @@ namespace NLogTest
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            string content = button.Content.ToString();
+
+            switch (content)
+            {
+                case "Trace":
+                    logger.Trace("トレース");
+                    break;
+                case "Debug":
+                    logger.Debug("デバッグ");
+                    break;
+                case "Info" :
+                    logger.Info("インフォ");
+                    break;
+                case "Warn" :
+                    logger.Warn("ワーニング");
+                    break;
+                case "Error":
+                    logger.Error("エラー");
+                    break;
+                case "Fatal":
+                    logger.Fatal("フェイタル");
+                    break;
+                default:
+                    logger.Fatal("デフォルト");
+                    break;
+            }
+
+            try
+            {
+                string aaaaa = (string)sender;
+            }
+            catch (Exception ex)
+            {
+                logger.Fatal(ex, "");
+            }
         }
     }
 }
