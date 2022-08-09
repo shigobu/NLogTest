@@ -63,7 +63,7 @@ namespace NLogTest
             }
             catch (Exception ex)
             {
-                logger.Fatal(ex, "");
+                logger.Fatal(ex, "{0}", e.GetHashCode());
             }
         }
     }
